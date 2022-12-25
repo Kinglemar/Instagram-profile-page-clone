@@ -1,6 +1,7 @@
 import { Bio, Gallery, Navbar } from './components/entry'
 import '../src/assets/css/App.css'
 import '../src/assets/css/index.css'
+import '../src/assets/css/bio.css'
 
 const App = () => {
   return (
