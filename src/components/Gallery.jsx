@@ -3,16 +3,17 @@ import getPhotoUrl from 'get-photo-url'
 import { db } from '../dexie'
 
 const Gallery = () => {
-  const allPhotos = useLiveQuery(() => db.gallery.toArray(), [])
+  // const allPhotos = useLiveQuery(() => db.gallery.toArray(), [])
+  const allPhotos = []
 
   const addPhoto = async () => {
-    db.gallery.add({
-      url: await getPhotoUrl('#addPhotoInput'),
-    })
+    // db.gallery.add({
+    //   url: await getPhotoUrl('#addPhotoInput'),
+    // })
   }
 
   const removePhoto = (id) => {
-    db.gallery.delete(id)
+    // db.gallery.delete(id)
   }
 
   return (

@@ -1,7 +1,7 @@
 import Dexie from 'dexie'
 
-export const db = new Dexie('myInsta')
+export const db = new Dexie('cloneInsta')
 db.version(1).stores({
-  bio: ',name,about',
-  gallery: '++id,url',
+  bio: ',name,username',
+  archive: '++id, images'
 })

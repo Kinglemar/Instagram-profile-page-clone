@@ -23,10 +23,6 @@ button {
   font-size: 16px;
 }
 
-#addPhotoInput {
-  display: none;
-}
-
 .add-photo-button {
   transform: scale(3);
   position: fixed;
@@ -123,7 +119,7 @@ button {
   border-radius: 8px;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 657px) {
   .input-field {
     display: none;
   }
@@ -180,6 +176,11 @@ button {
   .link:not(:first-child) {
     margin-left: 18px;
   }
+}
+@media screen and (max-width: 500px){
+.link:not(:first-child) {
+    margin-left: 10px;
+}
 }
 
 
