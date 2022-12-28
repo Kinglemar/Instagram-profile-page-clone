@@ -3,7 +3,7 @@ import { useLiveQuery } from 'dexie-react-hooks'
 import { useState } from 'react'
 import Base64URL from '../services/convertToBase64'
 import Card from '../components/Utils/Card'
-import { db } from '../dexie'
+import { db } from '../services/dexie'
 import Dialogue from './Utils/Dialogue'
 
 export default function PicturesComp() {

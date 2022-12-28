@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import picture from '../assets/img/annie.jpeg'
 import CustomModal from './Utils/Modal'
 import Preloader from './Utils/Preloader'
-import { db } from '../dexie'
+import { db } from '../services/dexie'
 import Base64URL from '../services/convertToBase64'
 
 

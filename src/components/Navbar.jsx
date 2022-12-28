@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { db } from '../dexie'
+import { db } from '../services/dexie'
 import Search from './Search'
 
 const Navbar = () => {
