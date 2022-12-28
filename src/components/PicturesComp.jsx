@@ -5,12 +5,15 @@ import Base64URL from '../services/convertToBase64'
 import Card from '../components/Utils/Card'
 import { db } from '../services/dexie'
 import Dialogue from './Utils/Dialogue'
+import Loader from './Utils/Loader'
+
 
 export default function PicturesComp() {
     let allPhotos = useLiveQuery(() => db.archive.toArray(), [])
-    var load = useLiveQuery(() => db.archive.toArray(), [])
+    var load = allPhotos
     const [open, setOpen] = useState(false)
     const [action, setAction] = useState(false)
+    const [fetching, setFetcher] = useState(true)
     var pic = null
     const uploadPhoto = async (event) => {
         pic = event.target.files[0]
@@ -21,6 +24,10 @@ export default function PicturesComp() {
             uid: Math.random()
         })
     }
+
+    setTimeout(() => {
+        setFetcher(false)
+    }, 3000)
 
     const BulkDelete = () => {
         allPhotos?.length > 0 && setOpen(true)
@@ -49,6 +56,9 @@ export default function PicturesComp() {
             removePhoto(el.id)
         }} key={index} picture={el} />)
     })
+    const Loaders = allPhotos?.map((el, index) => {
+        return (<Loader />)
+    })
 
     const removePhoto = (id) => {
         allPhotos = allPhotos.map((el) => el.id !== id)
@@ -59,8 +69,10 @@ export default function PicturesComp() {
             <div className="line galleria">
                 {allPhotos?.length > 0 ?
                     <div className="pt-14 picture-comp">
-                        {Cards}
-                    </div> : <div className="p-40 text-base text-center">No pictures here click the plus icon to add. </div>}
+                        { fetching ? Loaders : Cards}
+                    </div> :
+                    <div className="p-40 text-base text-center">No pictures here click the plus icon to add. </div>
+                }
 
             </div>
 

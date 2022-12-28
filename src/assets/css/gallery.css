@@ -7,6 +7,7 @@
     bottom: 5em;
     right: 3rem;
     cursor: pointer;
+    z-index: 20;
   }
 
   .delete{
@@ -15,11 +16,13 @@
     bottom: 2em;
     right: 3rem;
     cursor: pointer;
+    z-index: 20;
   }
 
   .picture-comp {
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
+    column-gap: 30px;
     font-family: Arial, Helvetica, sans-serif;
     padding: 3em 0 3em;
     border-bottom: 0.2px solid #dbdbdb;
@@ -29,11 +32,123 @@
     .picture-comp {
         display: grid;
         grid-template-columns: 3fr 3fr;
+        column-gap: 5px;
         font-family: Arial, Helvetica, sans-serif;
         padding: 3em 0 3em;
         border-bottom: 0.2px solid #dbdbdb;
         min-height: 70vh;
+        width: 75%;
+        margin: 0 auto;
       }
+  }
+  @media  screen and (max-width: 800px) {
+    .picture-comp {
+        display: grid;
+        grid-template-columns: 3fr 3fr;
+        column-gap: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 3em 0 3em;
+        border-bottom: 0.2px solid #dbdbdb;
+        min-height: 70vh;
+        width: 90%;
+        margin: 0 auto;
+      }
+  }
+  @media  screen and (max-width: 683px) {
+    .picture-comp {
+        display: grid;
+        grid-template-columns: 3fr 3fr;
+        column-gap: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 3em 0 3em;
+        border-bottom: 0.2px solid #dbdbdb;
+        min-height: 70vh;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .add-button {
+        transform: scale(2);
+        position: fixed;
+        bottom: 2em;
+        right: 7rem;
+        cursor: pointer;
+        z-index: 20;
+      }
+    
+      .delete{
+        transform: scale(2);
+        position: fixed;
+        bottom: 2em;
+        right: 2rem;
+        cursor: pointer;
+        z-index: 20;
+      }
+    
+  }
+  @media  screen and (max-width: 683px) {
+    .picture-comp {
+        display: grid;
+        grid-template-columns: 3fr 3fr;
+        column-gap: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 3em 0 3em;
+        border-bottom: 0.2px solid #dbdbdb;
+        min-height: 70vh;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .add-button {
+        transform: scale(2);
+        position: fixed;
+        bottom: 2em;
+        right: 7rem;
+        cursor: pointer;
+        z-index: 20;
+      }
+    
+      .delete{
+        transform: scale(2);
+        position: fixed;
+        bottom: 2em;
+        right: 2rem;
+        cursor: pointer;
+        z-index: 20;
+      }
+    
+  }
+  @media  screen and (max-width: 618px) {
+    .picture-comp {
+        display: grid;
+        grid-template-columns: 3fr;
+        column-gap: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 3em 0 3em;
+        border-bottom: 0.2px solid #dbdbdb;
+        min-height: 70vh;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .add-button {
+        transform: scale(2);
+        position: fixed;
+        bottom: 2em;
+        right: 2rem;
+        cursor: pointer;
+        z-index: 20;
+      }
+    
+      .delete{
+        transform: scale(2);
+        position: fixed;
+        bottom: 2em;
+        left: 2rem;
+        cursor: pointer;
+        z-index: 20;
+      }
+    
   }
   .item {
     height: 17.5em;

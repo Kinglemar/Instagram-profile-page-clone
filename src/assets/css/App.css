@@ -253,3 +253,11 @@ button {
   vertical-align: baseline;
   z-index: 1;
 }
+.phone{
+  width: 80%;
+}
+@media screen and (max-width: 449px){
+  .phone{
+    width: 100%;
+  }
+}

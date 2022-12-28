@@ -6,7 +6,7 @@ import { db } from '../services/dexie'
 import Base64URL from '../services/convertToBase64'
 
 
-export default function ProfileBio({count, followers, following}) {
+export default function ProfileBio({ count, followers, following }) {
     const [openModal, setOpenModal] = useState(false)
     const [loading, setPreloader] = useState(false)
     const [avatar, setAvatar] = useState(picture)
@@ -18,16 +18,16 @@ export default function ProfileBio({count, followers, following}) {
     const objectData = userDetails
 
     useEffect(() => {
-        const setDataFromDb = async () => {
-          const userDetailsFromDb = await db.bio.get('info')
-          userDetailsFromDb && setUserDetails(userDetailsFromDb)
+        const setData = async () => {
+            const userDetailsFromDb = await db.bio.get('info')
+            userDetailsFromDb && setUserDetails(userDetailsFromDb)
 
-          const profilePhotoFromDb = await db.bio.get('profile')
-          profilePhotoFromDb && setAvatar(profilePhotoFromDb)
+            const profilePhotoFromDb = await db.bio.get('profile')
+            profilePhotoFromDb && setAvatar(profilePhotoFromDb)
         }
-    
-        setDataFromDb()
-      }, [])
+
+        setData()
+    }, [])
 
     const setPictureInput = async (event) => {
         let output = event.target.files[0]
@@ -45,7 +45,7 @@ export default function ProfileBio({count, followers, following}) {
     return (
         <section className="profile-section">
             <div className="section">
-                <header className="items-stretch md:flex-wrap flex flex-row shrink-0 relative header-margin">
+                <header className="items-stretch adjust flex shrink-0 relative header-margin">
                     <div className="shrink-0 flex justify-center flex-col h-[12rem] relative growth">
                         <div className="avatar" >
                             <canvas className="img-canvas" height="336" width="336">
@@ -57,7 +57,7 @@ export default function ProfileBio({count, followers, following}) {
                     </div>
 
                     <div className="hidden">
-                    <input type="file" accept="image/*" name="photo" id="photo" onChange={setPictureInput} />
+                        <input type="file" accept="image/*" name="photo" id="photo" onChange={setPictureInput} />
                     </div>
 
                     {/* //second section */}
@@ -66,7 +66,7 @@ export default function ProfileBio({count, followers, following}) {
                         <div className="h-[48px] mb-5 flex items-center flex-row relative shrink">
 
                             <a className="cursor-pointer bg-transparent h-[18px] no-underline inline p-0 relative shrink" href="/" tabIndex="0">
-                                <h2 className=" _aacs _aada">{ userDetails.username}</h2>
+                                <h2 className=" _aacs _aada">{userDetails.username}</h2>
                             </a>
 
 
@@ -104,13 +104,13 @@ export default function ProfileBio({count, followers, following}) {
                         </div>
 
                         <ul className="flex text-base mb-5">
-                            <li className="mr-10"><div className="_aacx _aacu"><span className="numb"><span>{ count }</span></span> post{count > 1 ? 's' : ''}</div></li>
+                            <li className="mr-10"><div className="_aacx _aacu"><span className="numb"><span>{count}</span></span> post{count > 1 ? 's' : ''}</div></li>
                             <li className="mr-10"><a className="_aacx _aacu" href="/annieleibovitz/followers/" tabIndex="0"><div className=""><span className="numb"><span>1M</span></span> followers</div></a></li>
-                            <li className="mr-10"><div className="_aacx _aacu"><span className="numb"><span>{ following }</span></span> following</div></li>
+                            <li className="mr-10"><div className="_aacx _aacu"><span className="numb"><span>{following}</span></span> following</div></li>
                         </ul>
 
                         <div className="flex flex-col _aa_c">
-                            <span className="_aacl text-base m-0 numb inline leading-6 _aade">{ userDetails?.name }</span>
+                            <span className="_aacl text-base m-0 numb inline leading-6 _aade">{userDetails?.name}</span>
                             <a className="text-base " href="/" > <div className="link-tag">bit.ly/3NArNmg</div></a>
                             <a href="/" tabIndex="0">
                                 <div className="mt-3.5">
@@ -132,7 +132,7 @@ export default function ProfileBio({count, followers, following}) {
                     }}>
                         <div className="">
                             <div className="h-[17rem] flex flex-col justify-center">
-                                <div className="w-96 mx-auto">
+                                <div className="phone mx-auto phone">
                                     <div className="mb-2">
                                         <small className="text-base text-gray-700">First name</small>
                                     </div>
@@ -141,7 +141,7 @@ export default function ProfileBio({count, followers, following}) {
                                         objectData.name = event.target.value
                                     }} type="text" name="nameOfUser" />
                                 </div>
-                                <div className="w-96 mx-auto">
+                                <div className="phone mx-auto phone">
                                     <div className="mb-2 mt-1">
                                         <small className="text-base text-gray-700">Username</small>
                                     </div>
@@ -150,12 +150,12 @@ export default function ProfileBio({count, followers, following}) {
                                         objectData.username = event.target.value
                                     }} type="text" name="aboutUser" />
                                 </div>
-                                <div className="w-96 mx-auto">
+                                <div className="phone mx-auto phone">
                                     <button onClick={(event) => {
                                         setPreloader(true)
                                         setTimeout(() => {
                                             updateUserDetails(event)
-                                        },2000)
+                                        }, 2000)
                                         setTimeout(() => {
                                             setOpenModal(false)
                                             setPreloader(false)

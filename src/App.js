@@ -1,4 +1,4 @@
-import { Navbar, ProfileBio, Gallery } from './components/entry'
+import { Navbar, ProfileBio } from './components/entry'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { db } from './services/dexie'
 import '../src/assets/css/App.css'

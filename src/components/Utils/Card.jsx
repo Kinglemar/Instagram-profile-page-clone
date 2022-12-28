@@ -1,7 +1,7 @@
 export default function Card({ picture, deletePicture }) {
     return (
-        <div>
-            <div>
+        <div className="w-[293px] h-[293px] mb-8 mx-auto">
+            <div className="w-[293px] h-[293px]">
                 <div className="_aagu h-[293px] w-[293px] relative mb-8 ">
                     <div className="img-wrapper floating rounded">
                         <img alt="Pixel" className="w-full h-full" src={picture.image} width="293px" height="293px" style={{ 'objectFit': 'cover' }} />

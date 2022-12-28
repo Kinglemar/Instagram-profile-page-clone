@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from './App'
 
 
@@ -14,7 +14,7 @@ root.render(
         <Route path="/" element={<App />}>
         </Route>
         <Route path="*" element={<div className="p-24">
-          <h1 className="text-center text-2xl">Error 404</h1>
+          <h1 className="text-center text-3xl">Error 404</h1>
           <p className="p-5 text-center text-base">Page not found</p>
         </div>}>
         </Route>
