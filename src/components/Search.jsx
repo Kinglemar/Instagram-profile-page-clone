@@ -3,13 +3,21 @@ import Tile from './Tile'
 import Variables from '../services/user'
 
 
-export default function () {
+export default function Search ({searchFunction}) {
     const [user, updateUser] = useState(Variables)
+    let arr = user
+    const gallery = arr.filter((el) => {
+        return el?.name?.toLowerCase().includes(searchFunction?.toLowerCase())
+      })
+    console.log({gallery})
+
     const deleteUser = (el) => {
         let newUser = user
         let tray = newUser.filter((innerEl) => innerEl.uid !== el.uid)
         updateUser(tray)
     }
+
+    // updateUser(up)
     return (
         <div className="search-comp">
             <div className="search-header flex justify-between">
@@ -19,8 +27,8 @@ export default function () {
                 }} className="clear-btn">Clear all</button>
             </div>
 
-            {(user.length > 0 ) ? user.map((el) => {
-                return (<Tile user={el} deleteUser={() => {
+            {(user.length > 0 ) ? user.map((el, index) => {
+                return (<Tile key={index} user={el} deleteUser={() => {
                     deleteUser(el)
             }} />)
             }) : 

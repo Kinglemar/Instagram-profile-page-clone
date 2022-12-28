@@ -2,21 +2,6 @@
     padding: 0 15%;
     margin: auto;
   }
-  
-  .bio {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 3em 0 2em 5em;
-    border-bottom: 0.2px solid #dbdbdb;
-    margin-top: 5em;
-    margin-bottom: 2em;
-  }
-  
-  #profilePhotoInput {
-    display: none;
-  }
-  
   .profile-photo {
     background: #000;
     width: 10em;
